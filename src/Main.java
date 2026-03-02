@@ -3,4 +3,5 @@ public class Main {
         System.out.println("Hello world!");
         int result = ReversePolishNotation.evaluatePostfix("7 2 + 9 / 3 5 * +");
         System.out.println("Result: " + result);
+        String result2 = ReversePolishNotation.infixToPostfix("7 2 + 9 / 3 5 * +");
 }}

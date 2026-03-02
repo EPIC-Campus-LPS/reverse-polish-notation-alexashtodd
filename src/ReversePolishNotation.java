@@ -1,35 +1,4 @@
 public class ReversePolishNotation {
-    static int[] GetNumsPost(String[] input) {
-        int[] stack = {};
-        stack = new int[input.length];
-
-        for (int i = 0; i < input.length;i++) {
-            int x = 0;
-            try{
-
-                x = Integer.parseInt(input[i]);
-
-            } catch (NumberFormatException e) {
-                break;
-            }
-            stack[i] = x;
-            stack[stack.length -1] = i; // idea is to save i for operation funtion(later)
-        }
-        return(stack);
-    }
-    static String ProformOpration(String[] input,int[] input1){ //input contands the list of parts,ex:7 2 + 9 / 3 5 * +.
-        // input1 contans a array of numbers with a buffor of 0s with the last index having where the numbers end and the 0s start.
-        String op =input[1+input1[input1.length-1]]; // can only be operation
-        int[] nums = new int[input1[input1.length-1]]; // array to profom operations on
-        for(int i = 0;i <= input1[input1.length-1];i++){ //moving numbers from input1 to nums
-            nums[i] = Integer.parseInt(input[i]);
-        }
-
-
-
-
-        return(op);
-    }
     static int evaluatePostfix(String input){
         // input will always be '"7 2 + 9 / 3 5 * +"'
         // If its a number, add it to stack
@@ -50,22 +19,66 @@ public class ReversePolishNotation {
         for(String part: parts){
             try{
                 int x = Integer.parseInt(part);
-                st.push(x);
+                st.push(part);
+                System.out.println(st);
             } catch (NumberFormatException e) {
+                System.out.println(st);
+                String y = st.pop();
+                String z = st.pop();
+                System.out.println(st);
+                if(part .equals("+")){
+                    int w = Integer.parseInt(y) + Integer.parseInt(z);
+                    st.push(String.valueOf(w));
+                } else if (part.equals("-")) {
+                    int w = Integer.parseInt(y) - Integer.parseInt(z);
+                    st.push(String.valueOf(w));
+                } else if (part.equals("/")) {
+                    int w = Integer.parseInt(y) / Integer.parseInt(z);
+                    st.push(String.valueOf(w));
+                } else if (part .equals("*")) {
+                    int w = Integer.parseInt(y) * Integer.parseInt(z);
+                    st.push(String.valueOf(w));
+                }else{
+                    System.out.println("invalid opperater found");
+                }
 
-                break;
             }
 
             // if part is a number, add it to the stack
             // if its an operator, remove the last two numbers from the stack, do that operation and put the value back on the stack
         }
 
-        // If its a number, add it to stack
-        int[] nums = GetNumsPost(parts);
-        ProformOpration(parts,nums);
+        return(Integer.parseInt(st.pop()));
+    }
+
+    static String infixToPostfix(String input){
+        //Takes in an infix expression as a String, converts it to a postfix expression and returns it
+        String[] parts = input.split(" ");
+        Stack st = new Stack();
+
+        for(int i = 0; i < parts.length;i++){
+            if(parts[i].equals("^")){
+                System.out.println("^");
+            } else if(parts[i].equals("*") || parts[i].equals("/")){
+                System.out.println("*/");
+            } else if(parts[i].equals("+") || parts[i].equals("-")){
+                System.out.println("+-");
+            } else if(parts[i].equals("(")){
+                System.out.println("(");
+            } else{
+                System.out.println("num");
+                try{
+                    int x = Integer.parseInt(part);
+                    st.push(part);
+                    System.out.println(st);
+                } catch (NumberFormatException e) {
+            }
+        }
 
 
-        return(1);
+
+
+        return("hello");
     }
 //    static String infixToPostfix(String input){
 //
