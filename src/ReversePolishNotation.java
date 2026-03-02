@@ -68,10 +68,11 @@ public class ReversePolishNotation {
             } else{
                 System.out.println("num");
                 try{
-                    int x = Integer.parseInt(part);
-                    st.push(part);
+                    int x = Integer.parseInt(parts[i]);
+                    st.push(parts[i]);
                     System.out.println(st);
                 } catch (NumberFormatException e) {
+                    System.out.println("no vailed return");
             }
         }
 
@@ -80,7 +81,4 @@ public class ReversePolishNotation {
 
         return("hello");
     }
-//    static String infixToPostfix(String input){
-//
-//    }
 }
