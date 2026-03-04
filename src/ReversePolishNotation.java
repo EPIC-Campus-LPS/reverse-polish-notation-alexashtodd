@@ -51,34 +51,64 @@ public class ReversePolishNotation {
         return(Integer.parseInt(st.pop()));
     }
 
-    static String infixToPostfix(String input){
+    static String infixToPostfix(String input) {
         //Takes in an infix expression as a String, converts it to a postfix expression and returns it
         String[] parts = input.split(" ");
         Stack st = new Stack();
+        String temp = "";
+        String output = "";
 
-        for(int i = 0; i < parts.length;i++){
-            if(parts[i].equals("^")){
+        for (int i = 0; i < parts.length; i++) {
+            if (parts[i].equals("^")) {
                 System.out.println("^");
-            } else if(parts[i].equals("*") || parts[i].equals("/")){
-                System.out.println("*/");
-            } else if(parts[i].equals("+") || parts[i].equals("-")){
-                System.out.println("+-");
-            } else if(parts[i].equals("(")){
-                System.out.println("(");
-            } else{
-                System.out.println("num");
-                try{
-                    int x = Integer.parseInt(parts[i]);
+                if(!st.isEmpty() && !st.peek().equals("(") && Precedence(st.peek()) >= Precedence(parts[i])){
+                    temp = st.pop();
+                    output = String.join("",output,temp);
                     st.push(parts[i]);
-                    System.out.println(st);
+                }
+            } else if (parts[i].equals("*") || parts[i].equals("/")) {
+                System.out.println("*/");
+                if(!st.isEmpty() && !st.peek().equals("(") && Precedence(st.peek()) >= Precedence(parts[i])){
+                    temp = st.pop();
+                    output = String.join("",output,temp);
+                    st.push(parts[i]);
+                }
+            } else if (parts[i].equals("+") || parts[i].equals("-")) {
+                System.out.println("+-");
+                if(!st.isEmpty() && !st.peek().equals("(") && Precedence(st.peek()) >= Precedence(parts[i])){
+                    temp = st.pop();
+                    output = String.join("",output,temp);
+                    st.push(parts[i]);
+                }
+            } else if (parts[i].equals("(")) {
+                System.out.println("(");
+                st.push("(");
+
+            } else if (parts[i].equals(")")) { //todo Pop operators from the stack and add them to the output
+                // todo until you reach a left parenthesis (. Pop and discard the (
+                    System.out.println(")");
+
+            } else { //todo add them directly to the output string
+                try {
+                    System.out.println("num" + parts[i]);
                 } catch (NumberFormatException e) {
                     System.out.println("no vailed return");
+                }
             }
         }
-
-
-
-
         return("hello");
     }
+    static int Precedence(String op){ //todo finish
+//        Level 3: ^
+//        Level 2: *, /
+//        Level 1: +, -
+//        Level 0: (
+        return(1);
+    }
+
+
+
+
+
+
 }
