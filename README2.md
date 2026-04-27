@@ -39,12 +39,6 @@ javac ReversePolishNotation.java
 java ReversePolishNotation
 ```
 
-
-
-
-
-
-
 ## What the Output Looks Like
 
 When you run the program, the console will show the "logic" of the stack in real-time.
@@ -75,3 +69,34 @@ The code checks the "weight" (precedence) of each operator.
    Final Calculation Result: 22
 ```
 ## Resources and Citations
+
+### Core Concept
+the core concept of all of this is to understand Infix ,Postfix. by coding coversion adn evaluators with Stack and Queue.
+
+
+### Documentation / Technical References
+#### for part A
+1. read 2 numbers
+2. put on stack
+3. read operator
+4. take 2 numbers
+5. profome operation
+6. put resosalt on stack
+
+#### for part B 
+Takes in an infix expression as a String, converts it to a postfix expression and returns it
+1. Initializes a Stack
+2. Scans the Input String
+3. Handles Operands Directly: If the current character is an operand (a number or variable like A, B, or 5), it is immediately appended to the result postfix string.
+4. Manages Operator Precedence: When an operator (like +, -, *, /, or ^) is encountered, the algorithm compares its precedence against the operator at the top of the stack:
+5. Processes Parentheses:
+6. Opening Parentheses (: These are always pushed onto the stack to mark the beginning of a sub-expression.
+7. Closing Parentheses ): These trigger the algorithm to pop all operators from the stack and append them to the result until a matching ( is reached.
+8. Clears the Stack
+9. Returns the Result
+
+### Learning Resources
+[DSA Stacks and Queues](https://docs.google.com/presentation/d/1cl16kJ1Mvsz6QlV_STgsCsIMzOhoYER4/edit?slide=id.p1#slide=id.p1)\
+using this for the understanding of stacks and queues\
+[DSA What is Reverse Polish Notation](https://docs.google.com/presentation/d/1RjvxPpSymjwXxTsHy5QCvg9ZA7iOygn7fPSvsc4CUlk/edit?slide=id.p23#slide=id.p23)\
+using this for main guild because it covers the rules and everything about it, exsept the coding.
