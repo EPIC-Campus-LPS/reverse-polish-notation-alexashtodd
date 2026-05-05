@@ -68,6 +68,8 @@ The code checks the "weight" (precedence) of each operator.
    [7]              <-- 7+0 is 7, pushed back
    Final Calculation Result: 22
 ```
+Note: integer division is used, so results are truncated
+
 ## Resources and Citations
 
 ### Core Concept
