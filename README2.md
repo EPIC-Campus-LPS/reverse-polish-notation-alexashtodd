@@ -71,20 +71,24 @@ The code checks the "weight" (precedence) of each operator.
 ## Resources and Citations
 
 ### Core Concept
-the core concept of all of this is to understand Infix ,Postfix. by coding coversion adn evaluators with Stack and Queue.
+Infix: 5 + 3 (human-readable)\
+Postfix (RPN): 5 3 + (stack-friendly)\
+The algorithm uses a stack to:\
+convert infix → postfix\
+evaluate postfix expressions\
 
 
 ### Documentation / Technical References
 #### for part A
+Takes in an infix expression as a String, converts it to a postfix expression and returns it\
 1. read 2 numbers
 2. put on stack
 3. read operator
 4. take 2 numbers
-5. profome operation
-6. put resosalt on stack
+5. perform operation
+6. put result on stack
 
 #### for part B 
-Takes in an infix expression as a String, converts it to a postfix expression and returns it
 1. Initializes a Stack
 2. Scans the Input String
 3. Handles Operands Directly: If the current character is an operand (a number or variable like A, B, or 5), it is immediately appended to the result postfix string.
@@ -97,6 +101,7 @@ Takes in an infix expression as a String, converts it to a postfix expression an
 
 ### Learning Resources
 [DSA Stacks and Queues](https://docs.google.com/presentation/d/1cl16kJ1Mvsz6QlV_STgsCsIMzOhoYER4/edit?slide=id.p1#slide=id.p1)\
-using this for the understanding of stacks and queues\
+using this for the understanding of stacks and queues, this helps because it exsplans how to use them and how they work, withch helps with the requirement for Stacks and Queues\
 [DSA What is Reverse Polish Notation](https://docs.google.com/presentation/d/1RjvxPpSymjwXxTsHy5QCvg9ZA7iOygn7fPSvsc4CUlk/edit?slide=id.p23#slide=id.p23)\
-using this for main guild because it covers the rules and everything about it, exsept the coding.
+using this for main guide because it covers the rules and everything about it, except the coding.\
+Used to understand postfix rules and evaluation logic\
