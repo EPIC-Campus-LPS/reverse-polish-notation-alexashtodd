@@ -104,4 +104,4 @@ Takes in an infix expression as a String, converts it to a postfix expression an
 using this for the understanding of stacks and queues, this helps because it exsplans how to use them and how they work, withch helps with the requirement for Stacks and Queues\
 [DSA What is Reverse Polish Notation](https://docs.google.com/presentation/d/1RjvxPpSymjwXxTsHy5QCvg9ZA7iOygn7fPSvsc4CUlk/edit?slide=id.p23#slide=id.p23)\
 using this for main guide because it covers the rules and everything about it, except the coding.
-Used to understand postfix rules and evaluation logic\
+Used to understand postfix rules and evaluation logic.
